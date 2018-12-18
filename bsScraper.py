@@ -1,8 +1,8 @@
 import requests
 import re
 import string
-import mysql.connector
 from bs4 import BeautifulSoup
+##import dbfunctions
 
 homePage = requests.get("https://selkosanomat.fi/")
 soup = BeautifulSoup(homePage.content)
@@ -45,5 +45,8 @@ for word in toPrint.split():
     else:
         listToPrint.append(word)
 
+strToPrint = " ".join(listToPrint)
+
+print(strToPrint)
 ##for w in listToPrint:
 ##    print(w)
